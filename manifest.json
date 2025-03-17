@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Helper",
+  "version": "1.0",
+  "description": "A simple extension developed by SKEGGIA_27 to help you do some things...",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "<all_urls>",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": ["*://*/"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://valutazione.uniroma2.it/valutazione.didattica/main/warningModuliPage"
+      ],
+      "js": ["valutazione.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "images/16x16.png",
+    "48": "images/48x48.png",
+    "128": "images/128x128.png"
+  }
+}
